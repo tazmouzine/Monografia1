@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bob's Auto Parts</title>
+</head>
+
+<style type="text/css">
+input{
+	margin-left:50px;
+}
+</style>
+
+
+<body>
+<form action="processorder.php" method="post">
+	<label for="pneus">Pneus: </label><input id="pneus" type="text" name="pneus" size="3" maxlength="3" /><br />
+    <label for="oleo">Óleo: </label><input id="oleo" type="text" name="oleo" size="3" maxlength="3" /><br />
+    <label for="rodas">Rodas: </label><input id="rodas" type="text" name="rodas" size="3" maxlength="3" /><br />
+    <label for="addres">Endereço p/ entrega: </label><input id="addres" type="text" name="addres" size="50" maxlength="100" /><br />    
+    <input type="submit" value="Enviar"  />
+</form>
+</body>
+</html>

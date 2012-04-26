@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>teste</title>
+        <script language="javascript">
+            count = 0;
+            function addInput() {
+                div = document.getElementById('inputs');
+                count++;
+                var new_div = document.createElement('div');
+                new_div.id = 'div_input'+count;
+                var new_label = document.createElement('label');
+                var new_text = document.createTextNode('Diretório ');
+                new_label.appendChild(new_text);
+                new_div.appendChild(new_label);
+                var new_input = document.createElement('input');
+                new_input.type = 'text';
+                new_input.name = 'dir[]';
+                new_input.size = '45';
+                new_div.appendChild(new_input);
+                var new_button = document.createElement('input');
+                new_button.type = 'button';
+                new_button.name = 'rmv';
+                new_button.value = '-';
+                new_button.setAttribute('onClick','rmvInput(\'div_input'+count+'\')');
+                new_div.appendChild(new_button);
+                var new_break = document.createElement('div');
+                new_div.appendChild(new_break);
+                div.appendChild(new_div);
+            }
+            function rmvInput(inputs) {
+                div = document.getElementById('inputs');
+                input = document.getElementById(inputs);
+                div.removeChild(input);
+            }
+        </script>
+    </head>
+    <body>
+        <div style="text-align: center; width: 100%">
+            <div style="width: 65%; *width: 30%;">
+                <form id="teste" action="thumb.php" method="POST">
+                    <div align="right">
+                        Diretório <input type="text" name="dir[]" size="44" value="" /><input type="button" name="add" value="+" onClick="addInput();" /><br />
+                        <div id="inputs"></div>
+                        Tipo <select name="type" style="width: 329px; *width: 327px;">
+                                <option value="" selected="selected"></option>
+                                <option value="png">PNG</option>
+                                <option value="gif">GIF</option>
+                                <option value="jpg">JPG</option>
+                                <option value="bmp">BMP</option>
+                                <option value="wbmp">WBMP</option>
+                             </select><br />
+                        Largura <input type="text" name="x" size="50" value="" /><br />
+                        Altura <input type="text" name="y" size="50" value="" /><br /><br />
+                        <input type="submit" name="tratar" value="Tratar Imagens" />
+                        <input type="reset" value="Limpar Campos" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
