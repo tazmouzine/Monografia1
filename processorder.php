@@ -24,51 +24,6 @@ text-align:center;
 </style>
 
 <script type="text/javascript">
-
-$(document).ready(function(){
-var num = 2;		
-		$('.setup').click(function(){
-			$("#test_setup").append('<div class="fields" id="test_setup'+num+'"><input type="text" size="40" name="setup[]" id="setup" value=""></input><a style="color:#000" href="#" class="remove" onClick="removeSetup(test_setup'+num+')">Apagar</a><div>');
-			$('#test_setup'+num).css('display','none');
-			$('#test_setup'+num).slideDown();
-			num++;
-		});
-	});
-	
-$(document).ready(function(){
-var num = 2;		
-		$('.steps').click(function(){
-			$("#test_steps").append('<div class="fields" id="test_steps'+num+'"><input type="text" size="40" name="step[]" id="steps" value=""></input><a style="color:#000" href="#" class="remove" onClick="removeSteps(test_steps'+num+')">Apagar</a><div>');
-			$('#test_steps'+num).css('display','none');
-			$('#test_steps'+num).slideDown();
-			num++;
-		});
-	});
-
-$(document).ready(
-function(){
-var attach_num = 2;		
-		$('.attach').click(function(){
-			$("#attach").append('<div class="fields" id="attach'+attach_num+'"><input type="text" size="40" name="attachs[]" id="attachs" value=""></input><a style="color:#000" href="#" class="remove" onClick="removeAttach(attach'+attach_num+')">Apagar</a><div>');
-			$('#attach'+attach_num).css('display','none');
-			$('#attach'+attach_num).slideDown();
-			attach_num++;
-		});
-});
-
-function removeSetup(num){	
-	var parent = document.getElementById("test_setup");
-	parent.removeChild(num);
-};
-function removeSteps(num){	
-	var parent = document.getElementById("test_steps");
-	parent.removeChild(num);
-};	
-function removeAttach(num){	
-	var parent = document.getElementById("attach");
-	parent.removeChild(num);
-};
-
 count = 0;
 	function addInput(div, teste) {
 		var div_id = div.toString();
@@ -85,14 +40,16 @@ count = 0;
 		new_button.type = 'button';
 		new_button.name = 'rmv';
 		new_button.value = '-';
-		new_button.setAttribute('onClick','rmvInput(\'div_id\',\'div_input'+count+'\')');
+		new_button.setAttribute('onClick','rmvInput(\''+div_id+'\',\'div_input'+count+'\')');
 		new_div.appendChild(new_button);
 		var new_break = document.createElement('div');
 		new_div.appendChild(new_break);
 		div.appendChild(new_div);
+		$('#div_input'+count).css('display','none');
+		$('#div_input'+count).slideDown();
 	}
 	function rmvInput(div, inputs) {
-		div = document.getElementById('inputs');
+		div = document.getElementById(div);
 		input = document.getElementById(inputs);
 		div.removeChild(input);
 	}
@@ -117,9 +74,9 @@ count = 0;
 											<div><label for="description">Actual Results</label><div class="fields"><input type="text" size="60" name="ar" id="description" value=""></input></div></div>
 											<div><label for="description">Expect Results</label><div class="fields"><input type="text" size="60" name="er" id="description" value=""></input></div></div>
 											<div><div class="labels"><label for="description">Initial Conditions</label></div><div class="fields" id="test_setup"><input type="text" size="40" name="setup[]" id="description" value=""></input>
-											<a style="color:#000" href="#" class="setup">Mais uma linha</a></div></div>
+											<input type="button" name="add" value="+" onClick="addInput(\'test_setup\', \'setup[]\');" /></div></div>
 											<div><div><label for="description">Test Steps</label></div><div id="test_steps"><div id="fields"><input type="text" size="40" name="step[]" id="description" value=""></input></div></div>
-											<input type="button" name="add" value="+" onClick="addInput(\'attachs[]\');" /></div>
+											<input type="button" name="add" value="+" onClick="addInput(\'test_steps\', \'step[]\');" /></div>
 											<div><label for="description">Software Version</label><div id="fields"><input type="text" size="40" name="swv" id="description" value=""></input></div></div>
 											<div><label for="description">HW Version</label><div id="fields"><input type="text" size="40" name="hwv" id="description" value=""></input></div>
 											<div id="fields"><select name="hType">
