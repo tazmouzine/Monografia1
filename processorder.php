@@ -70,29 +70,30 @@ function removeAttach(num){
 };
 
 count = 0;
-	function addInput() {
-		div = document.getElementById('attach');
+	function addInput(div, teste) {
+		var div_id = div.toString();
+		div = document.getElementById(div_id);
 		count++;
 		var new_div = document.createElement('div');
 		new_div.id = 'div_input'+count;		
 		var new_input = document.createElement('input');
 		new_input.type = 'text';
-		new_input.name = 'attachs[]';
+		new_input.name = teste.toString();
 		new_input.size = '45';
 		new_div.appendChild(new_input);
 		var new_button = document.createElement('input');
 		new_button.type = 'button';
 		new_button.name = 'rmv';
 		new_button.value = '-';
-		new_button.setAttribute('onClick','rmvInput(\'div_input'+count+'\')');
+		new_button.setAttribute('onClick','rmvInput(\'div_id\',\'div_input'+count+'\')');
 		new_div.appendChild(new_button);
 		var new_break = document.createElement('div');
 		new_div.appendChild(new_break);
 		div.appendChild(new_div);
 	}
-	function rmvInput(attach) {
-		div = document.getElementById('attach');
-		input = document.getElementById(attach);
+	function rmvInput(div, inputs) {
+		div = document.getElementById('inputs');
+		input = document.getElementById(inputs);
 		div.removeChild(input);
 	}
 		
@@ -118,7 +119,7 @@ count = 0;
 											<div><div class="labels"><label for="description">Initial Conditions</label></div><div class="fields" id="test_setup"><input type="text" size="40" name="setup[]" id="description" value=""></input>
 											<a style="color:#000" href="#" class="setup">Mais uma linha</a></div></div>
 											<div><div><label for="description">Test Steps</label></div><div id="test_steps"><div id="fields"><input type="text" size="40" name="step[]" id="description" value=""></input></div></div>
-											<a style="color:#000" href="#" class="steps">Mais uma linha</a></div>
+											<input type="button" name="add" value="+" onClick="addInput(\'attachs[]\');" /></div>
 											<div><label for="description">Software Version</label><div id="fields"><input type="text" size="40" name="swv" id="description" value=""></input></div></div>
 											<div><label for="description">HW Version</label><div id="fields"><input type="text" size="40" name="hwv" id="description" value=""></input></div>
 											<div id="fields"><select name="hType">
@@ -152,8 +153,8 @@ count = 0;
 												<option value="d">Once,Twice       
 											</select></div></div>											
 											<div><label for="description">More information:</label><div><input type="text" size="40" name="moreInfo" id="description" value=""></input></div></div>
-											<div><label for="description">Attachments</label><div id="attach"><div><input type="text" size="40" name="attachs[]" id="description" value=""></input></div>									</div>
-											<div><input type="button" name="add" value="+" onClick="addInput();" /></div></div>
+											<div><label for="description">Attachments</label><div id="attachs"><div><input type="text" size="40" name="attachs[]" id="description" value=""></input></div>									</div>
+											<div><input type="button" name="add" value="+" onClick="addInput(\'attachs\', \'attachs[]\');" /></div></div>
 										</div>									
 										<div><input type="submit" value="Enviar"  /></div>
 									</form></div>
