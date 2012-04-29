@@ -7,11 +7,7 @@
                 div = document.getElementById('inputs');
                 count++;
                 var new_div = document.createElement('div');
-                new_div.id = 'div_input'+count;
-                var new_label = document.createElement('label');
-                var new_text = document.createTextNode('Diretório ');
-                new_label.appendChild(new_text);
-                new_div.appendChild(new_label);
+                new_div.id = 'div_input'+count;               
                 var new_input = document.createElement('input');
                 new_input.type = 'text';
                 new_input.name = 'dir[]';

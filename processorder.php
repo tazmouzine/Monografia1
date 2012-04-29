@@ -14,6 +14,12 @@ $equipe = $_GET['equipe'];
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
 
+<!--[if !IE]>
+<script type="text/javascript" src="scripts/scriptff.js"></script>
+<![endif]-->
+
+
+
 <style type="text/css">
 #aviso{
 width:100%;
@@ -23,38 +29,6 @@ text-align:center;
 	}
 </style>
 
-<script type="text/javascript">
-count = 0;
-	function addInput(div, teste) {
-		var div_id = div.toString();
-		div = document.getElementById(div_id);
-		count++;
-		var new_div = document.createElement('div');
-		new_div.id = 'div_input'+count;		
-		var new_input = document.createElement('input');
-		new_input.type = 'text';
-		new_input.name = teste.toString();
-		new_input.size = '45';
-		new_div.appendChild(new_input);
-		var new_button = document.createElement('input');
-		new_button.type = 'button';
-		new_button.name = 'rmv';
-		new_button.value = '-';
-		new_button.setAttribute('onClick','rmvInput(\''+div_id+'\',\'div_input'+count+'\')');
-		new_div.appendChild(new_button);
-		var new_break = document.createElement('div');
-		new_div.appendChild(new_break);
-		div.appendChild(new_div);
-		$('#div_input'+count).css('display','none');
-		$('#div_input'+count).slideDown();
-	}
-	function rmvInput(div, inputs) {
-		div = document.getElementById(div);
-		input = document.getElementById(inputs);
-		div.removeChild(input);
-	}
-		
-</script>
 </head>
 
 <body>
@@ -70,51 +44,131 @@ count = 0;
 			$homepage -> SetTitle('Webtop Template');			
 			$homepage -> SetContent('<div id="form">
 									<form action="process.php" method="post">
-										<div>
-											<div><label for="description">Actual Results</label><div class="fields"><input type="text" size="60" name="ar" id="description" value=""></input></div></div>
-											<div><label for="description">Expect Results</label><div class="fields"><input type="text" size="60" name="er" id="description" value=""></input></div></div>
-											<div><div class="labels"><label for="description">Initial Conditions</label></div><div class="fields" id="test_setup"><input type="text" size="40" name="setup[]" id="description" value=""></input>
-											<input type="button" name="add" value="+" onClick="addInput(\'test_setup\', \'setup[]\');" /></div></div>
-											<div><div><label for="description">Test Steps</label></div><div id="test_steps"><div id="fields"><input type="text" size="40" name="step[]" id="description" value=""></input></div></div>
-											<input type="button" name="add" value="+" onClick="addInput(\'test_steps\', \'step[]\');" /></div>
-											<div><label for="description">Software Version</label><div id="fields"><input type="text" size="40" name="swv" id="description" value=""></input></div></div>
-											<div><label for="description">HW Version</label><div id="fields"><input type="text" size="40" name="hwv" id="description" value=""></input></div>
-											<div id="fields"><select name="hType">
-													<option value="a">NS
-													<option value="b">SE
-													<option value="c">S        
-												</select>
-											</div></div>									
-											<div><label for="description">Dock Hardware</label><div><select name="dType">
-												<option value="a">Whisper
-												<option value="b">HD Dock/Super Dock
-												<option value="c">Lapdock Premium       
-												<option value=d">Lapdock Standard										   
-											</select>										
-											<input type="text" size="40" name="version" id="description" value="Version"></input></div></div>									
-											<div><label for="description">Phone Serial Number</label><div><input type="text" size="40" name="PhoneSerial" id="description" value=""></input></div></div>
-											<div><label for="description">Test Central Information</label></div>
-											<div><label for="description">Ciclo</label><div><input type="text" size="40" name="TestCase[]" id="description" value=""></input></div></div>
-											<div><label for="description">Test Case</label><div><input type="text" size="40" name="TestCase[]" id="description" value=""></input></div></div>
-											<div><label for="description">Display resolution</label><div><input type="text" size="40" name="display" id="description" value=""></input></div></div>							
-											<div><label for="OpMode">Operation Mode</label><div><select name="OpMode">
-												<option value="a">Standalone Phone Mode
-												<option value="b">Function through AIW
-												<option value="c">Webtop        
-											</select></div>	</div>																	
-											<div><label for="repeatable">Repeatable</label>
-											<div><select name="repeatable">
-												<option value="a">Every time
-												<option value="b">Often
-												<option value="c">Sometimes        
-												<option value="d">Once,Twice       
-											</select></div></div>											
-											<div><label for="description">More information:</label><div><input type="text" size="40" name="moreInfo" id="description" value=""></input></div></div>
-											<div><label for="description">Attachments</label><div id="attachs"><div><input type="text" size="40" name="attachs[]" id="description" value=""></input></div>									</div>
-											<div><input type="button" name="add" value="+" onClick="addInput(\'attachs\', \'attachs[]\');" /></div></div>
+										<div style="width:600px;">											
+											<div>
+													<div>	
+														<label for="description">Actual Results</label>
+													</div>
+													<div class="fields">
+														<input type="text" size="60" name="ar" id="description" value="" />
+													</div>													
+											</div>
+											<div >
+													<div >
+														<label for="description">Expect Results</label>
+													</div>
+													<div class="fields">
+														<input type="text" size="60" name="er" id="description" value="" />
+													</div>
+											</div>
+											<div>
+												<label for="description">Initial Conditions</label>
+													<div id="test_setup">
+														<input type="text" size="45" name="setup[]" id="description" value="" />														
+													</div>
+													<input type="button" id="botao" name="add" value="+" onClick="addInput(\'test_setup\', \'setup[]\');" />
+											</div>
+											<div>												
+												<label for="description">Test Steps</label>												
+													<div id="test_steps">
+															<input type="text" size="45" name="step[]" id="description" value="" />														
+													</div>
+													<input type="button" id="botao" name="add" value="+" onClick="addInput(\'test_steps\', \'step[]\');" />
+											</div>
+											<div>
+												<label for="description">Software Version</label>
+												<div class="fields">
+													<input type="text" size="40" name="swv" id="description" value="" />
+												</div>
+											</div>
+											<div>
+												<label for="description">HW Version</label>
+												<div class="fields">
+													<input type="text" size="40" name="hwv" id="description" value="" />
+													<select name="hType">
+														<option value="a">NS
+														<option value="b">SE
+														<option value="c">S        
+													</select>
+												</div>
+											</div>									
+											<div>
+												<label for="description">Dock Hardware</label>
+												<div>
+													<select name="dType">
+														<option value="a">Whisper
+														<option value="b">HD Dock/Super Dock
+														<option value="c">Lapdock Premium       
+														<option value=d">Lapdock Standard										   
+													</select>										
+													<input type="text" size="40" name="version" id="description" value="Version" />
+												</div>
+											</div>									
+											<div>
+												<label for="description">Phone Serial Number</label>
+												<div>
+													<input type="text" size="40" name="PhoneSerial" id="description" value="" />
+												</div>
+											</div>
+											<div>
+												<label for="description">Test Central Information</label>
+											</div>
+											<div>
+												<label for="description">Ciclo</label>
+												<div>
+													<input type="text" size="40" name="TestCase[]" id="description" value="" />
+												</div>
+											</div>
+											<div>
+												<label for="description">Test Case</label>
+												<div>
+													<input type="text" size="40" name="TestCase[]" id="description" value="" />
+												</div>
+											</div>
+											<div>
+												<label for="description">Display resolution</label>
+												<div>
+													<input type="text" size="40" name="display" id="description" value="" />
+												</div>
+											</div>							
+											<div>
+												<label for="OpMode">Operation Mode</label>
+													<div>
+														<select name="OpMode">
+															<option value="a">Standalone Phone Mode
+															<option value="b">Function through AIW
+															<option value="c">Webtop        
+														</select>
+													</div>											
+											</div>																	
+											<div>
+												<label for="repeatable">Repeatable</label>
+												<div>
+													<select name="repeatable">
+														<option value="a">Every time
+														<option value="b">Often
+														<option value="c">Sometimes        
+														<option value="d">Once,Twice       
+													</select>
+												</div>
+											</div>											
+											<div>
+												<label for="description">More information:</label>
+												<div>
+													<input type="text" size="40" name="moreInfo" id="description" value="" />
+												</div>
+											</div>
+											<div>
+												<label for="description">Attachments</label>
+												<div id="attachs">
+													<input type="text" size="45" name="attachs[]" id="description" value="" />													
+												</div>
+												<input type="button" id="botao" name="add" value="+"  onClick="addInput(\'attachs\', \'attachs[]\');" />
+											</div>
 										</div>									
-										<div><input type="submit" value="Enviar"  /></div>
-									</form></div>
+										<div><input type="submit" value="Enviar"  /></div>										
+									</form>
+									</div>
 								');
 			$homepage -> Display();
 			$homepage -> DisplayMenu($row2buttons);

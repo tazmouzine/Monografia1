@@ -69,8 +69,9 @@ class Page
 		p.foot {color:#FFFFFF; font-size:9px; text-align:center;font-family:Arial, Helvetica, sans-serif; font-weight:bold;}
 		a:link,a:visited,a:active{color:#FFFFFF;}
 		#content { float: none}
-		.labels { float: left; text-align: right; width: 50%;}
-		.fields { float: right; text-align: left; width: 70%;}
+		.labels { text-align: right; width: 50%;}
+		.fields { text-align: left; width: 70%;}
+		#botao {width: 80px}
 		#form { width: 80%}
 		#footer {color:#555658;	text-align:center;	font-family:Arial, Helvetica, sans-serif;	font-size:14px;	width:100%;	bottom:0px;	float:none;	height: 22px;	background:#333333;}
 		</style>

@@ -5,41 +5,53 @@ class Template
    
     function DisplayActualR($ar){		
     	echo "=== Reproducing the issue ===<br />
-		[Actual Results]<br />1.".$ar."<br />";			
+		[Actual Results]<br />1. ".ucfirst($ar).".<br />";			
 	}		
 	function DisplayExpectR($er){
-    	echo "[Expect Results]<br />1.".$er."<br />";
+    	echo "[Expect Results]<br />1. ".ucfirst($er).".<br /><br />";
     }		
 	function DisplayInitialC($setup){
-    	$a = 1;		
+    	$a = 1;	
+		$num_elem = count($setup);
 		echo "----------------------------------------------------------------------<br />[ Setup steps or settings ]<br />";
         if( strlen($setup[0]) != 0 ){
 			foreach($setup as $setupSteps){
 				if( strlen($setupSteps) != 0 ){
-				echo $a.".".$setupSteps.".<br />";			
-				$a++;
+				if($a == $num_elem){
+					echo $a.". ".ucfirst($setupSteps).".<br />";			
+				}else{
+					echo $a.". ".ucfirst($setupSteps).";<br />";	
+					$a++;
+				}
 				}
 			}
+			echo "<br />";
 		}else{
 			echo "N/A <br />";
 		}		
 	}   
 	function DisplayTestS($step){
 		$a = 1;
+		$num_elem = count($step);
 		echo "----------------------------------------------------------------------<br />[ Steps to reproduce ]<br />";
 		if( strlen($step[0]) != 0 ){
-		foreach($step as $steps){
-			if( strlen($steps) != 0 ){
-			echo $a.".".$steps.".<br />";
-			$a++;
-			}		
-		}
+			foreach($step as $steps){
+				if( strlen($steps) != 0 ){
+					if($a == $num_elem){
+						echo $a.". ".ucfirst($steps).".<br />";			
+					}else{
+						echo $a.". ".ucfirst($steps).";<br />";	
+						$a++;
+					}
+				}	
+			}
+			echo "<br />";
 		}else{
 			echo "N/A <br />";
 		}
 	}
 	function DisplaySV($swv){
-		echo "=== Additional information === <br />Software Version: ".$swv."<br />";
+		echo "=== Additional information === <br />Software Version: ".$swv.".<br />";
 	}	
 	function DisplayHWV($hwv){
 		echo "HW Version: ".$hwv." ";
@@ -77,15 +89,15 @@ class Template
 		}
 	}
 	function DisplayDockV($version){
-		echo "(".$version.")<br />";
+		echo "(".$version.").<br />";
 	}
 	function DisplayPSN($PhoneSerial){
-		echo "Serial Number: ".$PhoneSerial."<br />";
+		echo "Serial Number: ".$PhoneSerial.".<br />";
 	}	
 	function DisplayTestID($testCase){
 		echo "------------------------------------------------------------------------<br />[ Test Centeral Information]<br />
-			 Ciclo: ".$testCase[0]."<br />
-			 Test Case: ".$testCase[1]."<br />";
+			 Ciclo: ".$testCase[0].".<br />
+			 Test Case: ".$testCase[1].".<br />";
 	}	
 	function DisplayResolution($display){
 		echo "------------------------------------------------------------------------<br />[ Display resolution ]<br />";
@@ -128,21 +140,26 @@ class Template
 				break;
 		}
 		if( strlen($moreInfo) != 0 ){
-			echo "More info:".$moreInfo."<br />";
+			echo "More info:".ucfirst($moreInfo).".<br />";
 		}
 	}
 	function DisplayAttach($attach){
 		$a = 1;
+		$num_elem = count($attach);
 		echo "------------------------------------------------------------------------<br />[ Attachments ]<br />";		
 		if (strlen($attach[0]) != 0){
 			foreach($attach as $attachs){
 				if( strlen($attachs) != 0 ){
-				echo $a.".".$attachs.".<br />";
-				$a++;
+				if($a == $num_elem){
+					echo $a.". ".ucfirst($attachs).".<br />";			
+				}else{
+					echo $a.". ".ucfirst($attachs).";<br />";	
+					$a++;
+				}
 				}			
 			}		
 		}else{
-			echo "N/A <br />";
+			echo "N/A.<br />";
 		}
 	}    
  }
