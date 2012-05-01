@@ -40,6 +40,7 @@ text-align:center;
 	$template = new Template ();
 	$homepage -> SetTitle('Webtop Template');
 	$homepage -> Display();	
+	$template -> DisplaySumary($ar);
 	$template -> DisplayActualR($ar);
 	$template -> DisplayExpectR($er);
 	$template -> DisplayInitialC($setup);

@@ -8,6 +8,7 @@ this.addInput = function(div, teste) {
 		new_input.type = 'text';
 		new_input.name = teste.toString();
 		new_input.size = '45';
+		new_input.id = 'texto';
 		new_div.appendChild(new_input);
 		var new_button = document.createElement('input');
 		new_button.type = 'button';

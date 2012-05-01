@@ -7,7 +7,7 @@ class Page
     var $title = 'CR Template Builder';
     var $keywords = 'CR Template Builder';
 	var $footext = 'Monografia - Grupo: Alex Candido e Tales Mouzine';
-    var $buttons = array(	'Home' => 'processorder.php?equipe=a',
+    var $buttons = array(	'Home' => 'processTemplate.php?equipe=a',
     						'Contact' => 'contato2.php'							
                          );                  
 	// operações da classe Page
@@ -43,9 +43,9 @@ class Page
 	
 	function Display2(){
 		echo "<div id='content'>";
-		echo $this->content;
-        echo "</div>";
+		echo $this->content;        
 		$this -> DisplayFooter();
+		echo "</div>";
         echo "</body>\n</html>\n";
         }
     

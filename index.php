@@ -19,18 +19,18 @@ $footext = 'Monografia - Grupo: Alex Candido e Tales Mouzine';
 <div id="logo"><img src="imagens/logo.png" /></div>
 		<div id="content">
 			<div id="form">
-				<form action="processorder.php" method="post">
+				<form action="processTemplate.php" method="post">
 					<div id="b1">
-					<label for="equipe">Modelo de template</label><br />
-					<label for="issueType">Issue type</label>					
+						<div class="label">Modelo de template</div>
+						<div class="label">Issue type</div>					
 					</div>
 					<div id="b2">
-					<select name="equipe">
+					<select name="equipe" id="texto">
 						<option value="a">Webtop
 						<option value="b">Execution
 						<option value="c">Localization        
 					</select><br />
-					<select name="issueType">
+					<select name="issueType" id="texto">
 						<?php				
 						foreach($testType as $types => $descricao){
 							echo '<option value=\"'.$types.'\">'.$types.' - '.$descricao;
@@ -44,7 +44,7 @@ $footext = 'Monografia - Grupo: Alex Candido e Tales Mouzine';
 				</form>
 			</div>
 		</div>
-		<div id='footer_index' style='width:100%; height:60px;'>
+		<div id='footer_index'>
         	<p class='foot'>&copy;<?php echo $footext ?></p>
             <p class='foot'>Please see our <a href='contato2.php'>legal information page</a></p>
         </div>

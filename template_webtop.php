@@ -3,9 +3,12 @@ require ('repositorio.php');
 class Template
 {
 	// operações da classe Template	
-   
+	function DisplaySumary($ar){		
+    	echo "<div id='sumary'> Sumary: <br />
+		<input type='text' size='60' value='".ucfirst($ar)."'/><br />";			
+	}	
     function DisplayActualR($ar){		
-    	echo "=== Reproducing the issue ===<br />
+    	echo "<div id='dscr'>=== Reproducing the issue ===<br />
 		[Actual Results]<br />1. ".ucfirst($ar).".<br />";			
 	}		
 	function DisplayExpectR($er){
@@ -152,7 +155,7 @@ class Template
 			foreach($attach as $attachs){
 				if( strlen($attachs) != 0 ){
 				if($a == $num_elem){
-					echo $a.". ".ucfirst($attachs).".<br />";			
+					echo $a.". ".ucfirst($attachs).".<br /></div>";			
 				}else{
 					echo $a.". ".ucfirst($attachs).";<br />";	
 					$a++;
@@ -160,7 +163,7 @@ class Template
 				}			
 			}		
 		}else{
-			echo "N/A.<br />";
+			echo "N/A.<br /></div>";
 		}
 	}    
  }
