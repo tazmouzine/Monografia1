@@ -13,22 +13,7 @@ $equipe = $_GET['equipe'];
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
-
-<!--[if !IE]>
 <script type="text/javascript" src="scripts/scriptff.js"></script>
-<![endif]-->
-
-
-
-<style type="text/css">
-#aviso{
-width:100%;
-background:#FFFF00;
-border:#FF0000 1px solid;
-text-align:center;		
-	}
-</style>
-
 </head>
 
 <body>
@@ -42,7 +27,7 @@ text-align:center;
 									 );
 			$homepage = new Page ();
 			$homepage -> SetTitle('Webtop Template');			
-			$homepage -> SetContent('<div id="form">
+			$homepage -> SetContent('<div id="form_webtop">
 									<form action="process.php" method="post">
 										<div style="width:600px;">											
 											<div>

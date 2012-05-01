@@ -1,4 +1,5 @@
 <?php 
+require ('repositorio.php');
 class Template
 {
 	// operações da classe Template	

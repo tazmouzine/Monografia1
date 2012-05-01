@@ -1,0 +1,28 @@
+* {padding:0; margin:0;}
+h1 {color:#FFFFFF; text-align:center;}
+.menu {color:#000; text-align:center; padding:0px 5px; margin-top:4px;}
+.menu:hover {}
+.teste:hover{border-bottom:#ff6600 2px solid;}
+.menu2 {background:#FFF; font-weight:bold;}		
+p {text-align:justify; }
+p.foot {text-align:center;}
+a:link,a:visited,a:active{color:#ff6600; text-decoration:none;}
+
+#botao {width: 80px;}
+
+#content { clear: both;}
+
+#form_webtop { padding:20px 20px;}
+#form { 	position:relative; padding-top: 100px; text-align: center;}
+#form select{ margin-left:5px;margin-top:2px;}
+#form #b1 {float:left;width:50%; text-align:right;height:60px;}
+#form #b2 {float:right;width:50%; text-align:left;height:60px;}
+
+#logo {
+	border-bottom: #ff6600 2px solid;
+	height: 60px;
+	padding: 5px;
+}
+
+#footer_index {width:100%; height: 60px;border-top:#ff6600 2px solid;	background:#FFFFFF; padding-top: 20px; position:fixed; bottom:0px;}
+#footer{width:100%; height: 60px;border-top:#ff6600 2px solid;	background:#FFFFFF; padding-top: 20px; position:relative; bottom:0px;}
