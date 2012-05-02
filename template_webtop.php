@@ -4,8 +4,7 @@ class Template
 {
 	// operações da classe Template	
 	function DisplaySumary($ar){		
-    	echo "<div id='sumary'> Sumary: <br />
-		<input type='text' size='60' value='".ucfirst($ar)."'/><br />";			
+    	echo "<div id='sumary'> Sumary:	<input type='text' size='60' value='".ucfirst($ar)."'/><br />";			
 	}	
     function DisplayActualR($ar){		
     	echo "<div id='dscr'>=== Reproducing the issue ===<br />

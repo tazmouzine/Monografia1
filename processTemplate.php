@@ -49,27 +49,27 @@ $equipe = $_GET['equipe'];
 												<div>
 													<label for="description">Initial Conditions</label>
 														<div id="test_setup">
-															<input type="text" id="texto" size="50" name="setup[]" id="description" value="" />														
+															<input type="text" id="texto" size="45" name="setup[]" id="description" value="" />														
 														</div>
 														<input type="button" id="add" name="add" value="+" onClick="addInput(\'test_setup\', \'setup[]\');" />
 												</div>
 												<div>												
 													<label for="description">Test Steps</label>												
 														<div id="test_steps">
-																<input type="text" id="texto" size="50" name="step[]" id="description" value="" />														
+																<input type="text" id="texto" size="45" name="step[]" id="description" value="" />														
 														</div>
 														<input type="button" id="add" name="add" value="+" onClick="addInput(\'test_steps\', \'step[]\');" />
 												</div>
 												<div>
 													<label for="description">Software Version</label>
 													<div class="fields">
-														<input type="text" id="texto" size="50" name="swv" id="description" value="" />
+														<input type="text" id="texto" size="45" name="swv" id="description" value="" />
 													</div>
 												</div>
 												<div>
 													<label for="description">HW Version</label>
 													<div class="fields">
-														<input type="text" id="texto" size="50" name="hwv" id="description" value="" />
+														<input type="text" id="texto" size="45" name="hwv" id="description" value="" />
 														<select name="hType" id="texto">
 															<option value="a">NS
 															<option value="b">SE
@@ -94,7 +94,7 @@ $equipe = $_GET['equipe'];
 												<div>
 													<label for="description">Phone Serial Number</label>
 													<div>
-														<input type="text" id="texto" size="50" name="PhoneSerial" id="description" value="" />
+														<input type="text" id="texto" size="45" name="PhoneSerial" id="description" value="" />
 													</div>
 												</div>
 												<div>
@@ -103,19 +103,19 @@ $equipe = $_GET['equipe'];
 												<div>
 													<label for="description">Ciclo</label>
 													<div>
-														<input type="text" id="texto" size="50" name="TestCase[]" id="description" value="" />
+														<input type="text" id="texto" size="45" name="TestCase[]" id="description" value="" />
 													</div>
 												</div>
 												<div>
 													<label for="description">Test Case</label>
 													<div>
-														<input type="text" id="texto" size="50" name="TestCase[]" id="description" value="" />
+														<input type="text" id="texto" size="45" name="TestCase[]" id="description" value="" />
 													</div>
 												</div>										
 												<div>
 													<label for="description">Display resolution</label>
 													<div>
-														<input type="text" id="texto" size="50" name="display" id="description" value="" />
+														<input type="text" id="texto" size="45" name="display" id="description" value="" />
 													</div>
 												</div>							
 												<div>
@@ -142,13 +142,13 @@ $equipe = $_GET['equipe'];
 												<div>
 													<label for="description">More information:</label>
 													<div>
-														<input type="text" id="texto" size="50" name="moreInfo" id="description" value="" />
+														<input type="text" id="texto" size="45" name="moreInfo" id="description" value="" />
 													</div>
 												</div>
 												<div>
 													<label for="description">Attachments</label>
 													<div id="attachs">
-														<input type="text" id="texto" size="50" name="attachs[]" id="description" value="" />													
+														<input type="text" id="texto" size="45" name="attachs[]" id="description" value="" />													
 													</div>
 													<input type="button" id="add" name="add" value="+"  onClick="addInput(\'attachs\', \'attachs[]\');" />
 												</div>												

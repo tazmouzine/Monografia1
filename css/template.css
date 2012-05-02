@@ -15,7 +15,9 @@ a:link,a:visited,a:active{color:#000; text-decoration:none;}
 #form_webtop label{ margin-top:10px;}
 #texto{ height:20px; border:none; background:#CCCCCC;margin-bottom:10px;margin-right:5px;}
 #add{width: 80px; height:20px; border:none; background:#99CC99;margin-bottom:10px;margin-right:5px;}
+#add:hover{background:#82B37F;}
 #botao {width: 80px; height:20px; border:none; background:#FFFF66;margin-bottom:10px;margin-right:5px;}
+#botao:hover {background:#C9CC6E;}
 #send {width: 100%; border:none; background:#6699FF; text-align:center;height: 40px; margin-top:10px;margin-bottom:10px; font-weight:bold;}
 #send:hover {background:#FFFF66;}
 
