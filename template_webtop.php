@@ -3,9 +3,11 @@ require ('repositorio.php');
 class Template
 {
 	// operações da classe Template	
-   
+	function DisplaySumary($sumary){		
+    	echo "<div id='sumary'> Sumary:	<input type='text' size='60' value='".ucfirst($sumary)."'/><br />";			
+	}	
     function DisplayActualR($ar){		
-    	echo "=== Reproducing the issue ===<br />
+    	echo "<div id='dscr'>=== Reproducing the issue ===<br />
 		[Actual Results]<br />1. ".ucfirst($ar).".<br />";			
 	}		
 	function DisplayExpectR($er){
@@ -13,43 +15,33 @@ class Template
     }		
 	function DisplayInitialC($setup){
     	$a = 1;	
-		$num_elem = count($setup);
 		echo "----------------------------------------------------------------------<br />[ Setup steps or settings ]<br />";
-        if( strlen($setup[0]) != 0 ){
-			foreach($setup as $setupSteps){
-				if( strlen($setupSteps) != 0 ){
-				if($a == $num_elem){
-					echo $a.". ".ucfirst($setupSteps).".<br />";			
-				}else{
-					echo $a.". ".ucfirst($setupSteps).";<br />";	
-					$a++;
-				}
-				}
-			}
-			echo "<br />";
-		}else{
-			echo "N/A <br />";
-		}		
+        foreach($setup as $setupSteps){
+		   if(strlen($setupSteps) != 0 ){
+			   if($a > 1){
+				   echo ";<br />";
+			   }
+			   echo $a.". ".ucfirst($setupSteps);
+				   $a++;
+			}  
+		}
+		if($a > 1){echo ".<br />";}		
+		if($a == 1){echo "N/A.<br />";}	
 	}   
 	function DisplayTestS($step){
 		$a = 1;
-		$num_elem = count($step);
-		echo "----------------------------------------------------------------------<br />[ Steps to reproduce ]<br />";
-		if( strlen($step[0]) != 0 ){
-			foreach($step as $steps){
-				if( strlen($steps) != 0 ){
-					if($a == $num_elem){
-						echo $a.". ".ucfirst($steps).".<br />";			
-					}else{
-						echo $a.". ".ucfirst($steps).";<br />";	
-						$a++;
-					}
-				}	
-			}
-			echo "<br />";
-		}else{
-			echo "N/A <br />";
+		echo "----------------------------------------------------------------------<br />[ Steps to reproduce ]<br />";		
+		foreach($step as $setupSteps){
+		   if(strlen($setupSteps) != 0 ){
+			   if($a > 1){
+				   echo ";<br />";
+			   }
+				   echo $a.". ".ucfirst($setupSteps);
+				   $a++;
+			   }  
 		}
+		if($a > 1){echo ".<br />";}	
+		if($a == 1){echo "N/A.<br />";}
 	}
 	function DisplaySV($swv){
 		echo "=== Additional information === <br />Software Version: ".$swv.".<br />";
@@ -146,22 +138,18 @@ class Template
 	}
 	function DisplayAttach($attach){
 		$a = 1;
-		$num_elem = count($attach);
 		echo "------------------------------------------------------------------------<br />[ Attachments ]<br />";		
-		if (strlen($attach[0]) != 0){
-			foreach($attach as $attachs){
-				if( strlen($attachs) != 0 ){
-				if($a == $num_elem){
-					echo $a.". ".ucfirst($attachs).".<br />";			
-				}else{
-					echo $a.". ".ucfirst($attachs).";<br />";	
-					$a++;
-				}
-				}			
-			}		
-		}else{
-			echo "N/A.<br />";
+		foreach($attach as $setupSteps){
+			   if(strlen($setupSteps) != 0 ){
+					   if($a > 1){
+							   echo ";<br />";
+					   }
+					   echo $a.". ".ucfirst($setupSteps);
+					   $a++;
+			   }  
 		}
+		if($a > 1){echo ".<br />";}
+		if($a == 1){echo "N/A.<br /></div>";}		
 	}    
  }
 ?> 
