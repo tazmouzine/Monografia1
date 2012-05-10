@@ -29,7 +29,15 @@ $equipe = $_GET['equipe'];
 			$homepage -> SetTitle('Webtop Template');			
 			$homepage -> SetContent('<form action="process.php" method="post">
 										<div id="form_webtop">	
-											<div id="b1">											
+											<div id="b1">
+												<div>
+														<div>	
+															<label for="description">Sumary:</label>
+														</div>
+														<div class="fields">
+															<input type="text" id="texto" size="50" name="sumary" id="description" value="" />
+														</div>													
+												</div>
 												<div>
 														<div>	
 															<label for="description">Actual Results</label>

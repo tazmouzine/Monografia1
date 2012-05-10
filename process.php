@@ -4,6 +4,7 @@ require ('template_webtop.php');
 // cria nomes de variaveis abreviadas
 $DOCUMENT_ROOT = $HTTP_SERVER_VARS['DOCUMENT_ROOT'];
 
+$sumary = $_POST['sumary'];
 $ar = $_POST['ar'];
 $er = $_POST['er'];
 $setup = $_POST['setup'];
@@ -40,7 +41,7 @@ text-align:center;
 	$template = new Template ();
 	$homepage -> SetTitle('Webtop Template');
 	$homepage -> Display();	
-	$template -> DisplaySumary($ar);
+	$template -> DisplaySumary($sumary);
 	$template -> DisplayActualR($ar);
 	$template -> DisplayExpectR($er);
 	$template -> DisplayInitialC($setup);

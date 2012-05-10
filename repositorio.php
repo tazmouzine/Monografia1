@@ -1,6 +1,21 @@
 <?php
 //Imagens dos eventos, página inicial ---------------------------------------------------------------
-$testType = array(	
+$wtTestType = array(	
+	'ET'=>' Exploratory or Random',
+	'Sanity'=>'Sanity',
+	'Feature'=>'Feature'
+);
+
+$exTestType = array(	
+	'CTS'=>'Compatibility Test Suite',
+	'GMS'=>'Google Mobile Services',
+	'ACD'=>'Android Compatibility Definition',
+	'ET'=>' Exploratory or Random',
+	'PR'=>'Product Regression',
+	'US'=>'User Stories'
+);
+
+$locTestType = array(	
 	'CTS'=>'Compatibility Test Suite',
 	'GMS'=>'Google Mobile Services',
 	'ACD'=>'Android Compatibility Definition',
@@ -12,6 +27,13 @@ $testType = array(
 	'KPI'=>'Key Performance Indicators',
 	'CV'=>'Carrier Validation'
 );
+
+$wtLabels = array(	
+	'Sanity'=>'spyder webtop3 wt3_sanity',
+	'ET'=>'spyder webtop3 wt3_ntc',
+	'Feature'=>'spyder webtop3 wt3_func'
+);
+
 
 $carrier = array(	
 	'Claro BR'=>'ClaroBR',
